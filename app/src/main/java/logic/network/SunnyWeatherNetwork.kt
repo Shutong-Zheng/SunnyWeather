@@ -9,7 +9,7 @@ import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 import kotlin.coroutines.suspendCoroutine
 
-class SunnyWeatherNetwork {
+object SunnyWeatherNetwork {
     private val placeService = ServiceCreator.create(PlaceService::class.java)
 
     suspend fun searchPlaces(query: String) = placeService.searchPlaces(query).await()
@@ -24,7 +24,6 @@ class SunnyWeatherNetwork {
                         RuntimeException("response body is null")
                     )
                 }
-
                 override fun onFailure(call: Call<T>, t: Throwable) {
                     continuation.resumeWithException(t)
                 }
