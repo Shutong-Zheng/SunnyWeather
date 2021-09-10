@@ -1,7 +1,9 @@
 package ui.place
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,6 +17,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.sunnyweather.android.R
+import logic.Repository
+import logic.dao.PlaceDao
+import logic.model.Place
+import ui.weather.WeatherActivity
 
 class PlaceFragment : Fragment(){
     val viewModel by lazy { ViewModelProvider.NewInstanceFactory().create(PlaceViewModel::class.java) }
@@ -31,6 +37,18 @@ class PlaceFragment : Fragment(){
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        Log.d("PlaceFragment", viewModel.isPlaceSaved().toString())
+        if(viewModel.isPlaceSaved()){
+            val intent = Intent(context, WeatherActivity::class.java).apply {
+                val place = viewModel.getSavedPlace()
+                putExtra("place_name", place.name)
+                putExtra("location_lng", place.location.lng)
+                putExtra("location_lat", place.location.lat)
+            }
+            startActivity(intent)
+            activity?.finish()
+            return
+        }
         val layoutManager = LinearLayoutManager(activity)
         val recyclerView = view?.findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView?.layoutManager = layoutManager
@@ -63,4 +81,5 @@ class PlaceFragment : Fragment(){
             }
         })
     }
+
 }

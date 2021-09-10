@@ -8,6 +8,7 @@ class SunnyWeatherApplication : Application() {
     companion object{
         const val TOKEN = "o7X52NPFFMMKc44a"
 
+        //为了去掉这个警告
         @SuppressLint("StaticFieldLeak")
         lateinit var context: Context
     }
