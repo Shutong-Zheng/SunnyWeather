@@ -16,6 +16,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.sunnyweather.android.MainActivity
 import com.sunnyweather.android.R
 import logic.Repository
 import logic.dao.PlaceDao
@@ -38,7 +39,7 @@ class PlaceFragment : Fragment(){
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         Log.d("PlaceFragment", viewModel.isPlaceSaved().toString())
-        if(viewModel.isPlaceSaved()){
+        if(activity is MainActivity && viewModel.isPlaceSaved()){
             val intent = Intent(context, WeatherActivity::class.java).apply {
                 val place = viewModel.getSavedPlace()
                 putExtra("place_name", place.name)

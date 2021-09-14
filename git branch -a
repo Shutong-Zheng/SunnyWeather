@@ -1,0 +1,29 @@
+[33mcommit 9b971dfe167de7a02c7b35a7c2220f6308645f0c[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Gloomy <544642359@qq.com>
+Date:   Fri Sep 10 16:12:42 2021 +0800
+
+    加入显示天气信息的功能
+
+[33mcommit 8df785330e890577b33da1a8899f9f506da1e1f6[m
+Author: Gloomy <544642359@qq.com>
+Date:   Wed Sep 1 21:11:57 2021 +0800
+
+    实现搜索全球城市的功能
+
+[33mcommit 6531820ce59d2c59d2128bb93a7c09b5f97126c3[m
+Author: Gloomy <544642359@qq.com>
+Date:   Mon Aug 23 10:24:43 2021 +0800
+
+    git commit -m "2021.8.23"
+
+[33mcommit a57ca26ad7d89b0432edac617462c0e5c23c84b1[m
+Author: Gloomy <544642359@qq.com>
+Date:   Fri Aug 13 16:54:00 2021 +0800
+
+    First commit.
+
+[33mcommit f158dad00c30771b11efe40bb0639789285a7fef[m
+Author: Shutong-Zheng <59720631+Shutong-Zheng@users.noreply.github.com>
+Date:   Fri Aug 13 16:18:24 2021 +0800
+
+    Initial commit
